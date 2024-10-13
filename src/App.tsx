@@ -6,6 +6,7 @@ import { Zoom } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./redux/reducers/TaskReducer";
+import { Leaderboard } from "./leaderboard";
 
 function App() {
   const { isConnected } = useAccount();
@@ -29,6 +30,7 @@ function App() {
       <Header />
       <div className="px-6 md:px-36">
         <History />
+        <Leaderboard />
       </div>
       {isConnected ? (
         <div>

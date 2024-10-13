@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 export const History = () => {
   const [itemCnt, setItemCnt] = useState(6);
@@ -75,7 +76,8 @@ export const History = () => {
   useEffect(() => {
     setLimitedItems(Object.values(arr).slice(0, itemCnt));
   }, [itemCnt]);
-
+  const active: string = " bg-[#3A4142] font-bold";
+  const [activeTab, setActiveTab] = useState(0);
   return (
     <div className="">
       <div className="mb-1.5 h-8 flex items-center ">
@@ -86,10 +88,24 @@ export const History = () => {
       <div>
         <div className="flex justify-end">
           <div className="flex justify-between items-center rounded-base bg-[#323738] text-white">
-            <div className="bg-[#3A4142] py-3 px-6 text-sm rounded-base font-bold">
+            <div
+              className={classNames(
+                " py-3 px-7 text-sm rounded-base font-bold hover:cursor-pointer hover:bg-[#3A4142]",
+                { " bg-[#3A4142]": !activeTab }
+              )}
+              onClick={() => setActiveTab(0)}
+            >
               All bets
             </div>
-            <div className="py-3 px-6 text-sm">High Roller</div>
+            <div
+              className={classNames(
+                "py-3 px-6 text-sm hover:cursor-pointer rounded-base hover:bg-[#3A4142]",
+                { "bg-[#3A4142]": activeTab }
+              )}
+              onClick={() => setActiveTab(1)}
+            >
+              High Roller
+            </div>
           </div>
         </div>
         <div className="mt-4 w-full ">

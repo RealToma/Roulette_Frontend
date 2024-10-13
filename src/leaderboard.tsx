@@ -139,7 +139,10 @@ export const Leaderboard = () => {
             </div>
           </div>
           <div className="p-3 border-2 border-dashed w-full">
-            <table className="table-fixed w-full">
+            <table
+              className="table-fixed w-full border-separate border-spacing-0"
+              id="table"
+            >
               <thead>
                 <tr>
                   <th className="w-[25%] text-white text-[0.8rem] font-normal">
@@ -156,26 +159,48 @@ export const Leaderboard = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style={{ fontFamily: "Jua" }}>
                 {Object.keys(arr)
                   .filter((_, index) => index < 4 && index > 0)
                   .map((i) => (
-                    <tr key={i}>
-                      <td>
-                        <img
-                          className="w-6 h-6"
-                          src={"./duck" + i + ".png"}
-                          alt="duck"
-                        />
+                    <tr
+                      key={i}
+                      style={{
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <td
+                        scope="col"
+                        className="truncate text-center text-white text-[0.8rem] p-1 border border-gray-600 mt-1  rounded-l-base border-r-0"
+                      >
+                        <div className="flex items-center">
+                          <img
+                            className="w-6 h-6"
+                            src={"./duck" + i + ".png"}
+                            alt="duck"
+                          />
+                          <div className="truncate text-center ml-2 text-white text-[0.8rem]">
+                            Jhon
+                          </div>
+                        </div>
                       </td>
-                      <td className=" truncate text-center text-white">
+                      <td
+                        scope="col"
+                        className=" truncate text-center text-white text-[0.8rem] p-1 border border-gray-600 mt-1 border-x-0"
+                      >
                         {arr[i].address}
                       </td>
-                      <td className=" truncate text-center text-white">
+                      <td
+                        scope="col"
+                        className=" truncate text-center text-white text-[0.8rem] p-1 border border-gray-600 mt-1  border-x-0"
+                      >
                         {arr[i].username}
                       </td>
-                      <td className=" truncate text-center text-white">
-                        {arr[i].profit}
+                      <td
+                        scope="col"
+                        className=" truncate text-center text-white text-[0.8rem] p-1 border border-gray-600 mt-1 border-l-0 rounded-r-md"
+                      >
+                        {"$300"}
                       </td>
                     </tr>
                   ))}

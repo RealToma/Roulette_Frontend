@@ -7,7 +7,6 @@ export const Header = () => {
         <img className="w-9 h-9" src="./logo.png" alt="logo" />
         <div className="text-white font-bold text-base">Duck Rush</div>
       </div>
-      {/* <div className="px-4 py-1 bg-cs rounded-base">SignIn</div> */}
       <div className="block">
         <ConnectWallet />
       </div>

@@ -14,7 +14,7 @@ export const History = () => {
     },
     1: {
       betid: "89929309423",
-      address: "0xcseokfdfi4fn3nf3onfdfdfdfdfdfdssdsdsdssdfn89",
+      address: "0xcseokfdfi4fn3nf3onfdfn89",
       username: "Toma",
       payout: "1.5",
       profit: 101023,
@@ -156,7 +156,7 @@ export const History = () => {
                 </div>
                 <div className="flex justify-between gap-2">
                   <div>Wallet </div>
-                  <div>{arr[i].address}</div>
+                  <div className="text-[#FF0037] ">{arr[i].address}</div>
                 </div>
                 <div className="flex justify-between gap-2">
                   <div>User </div>
@@ -168,7 +168,7 @@ export const History = () => {
                 </div>
                 <div className="flex justify-between gap-2">
                   <div>Profit </div>
-                  <div>{arr[i].profit}</div>
+                  <div className=" text-[#FFC530]">{arr[i].profit}</div>
                 </div>
               </div>
             ))}

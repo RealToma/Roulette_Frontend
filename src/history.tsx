@@ -13,7 +13,7 @@ export const History = () => {
     },
     1: {
       betid: "89929309423",
-      address: "0xcseokfdfi4fn3nf3onfsdfn89",
+      address: "0xcseokfdfi4fn3nf3onfdfdfdfdfdfdssdsdsdssdfn89",
       username: "Toma",
       payout: "1.5",
       profit: 101023,
@@ -92,29 +92,42 @@ export const History = () => {
             <div className="py-3 px-6 text-sm">High Roller</div>
           </div>
         </div>
-        <div className="mt-4 w-full">
-          <table className="table-fixed w-full text-md bg-[#323738] hidden md:block">
-            <thead className="text-gray-400">
-              <tr>
-                <th className="w-1/5 max-w-5 truncate">Bet ID</th>
-                <th className="w-1/5 max-w-5 truncate">Wallet Address</th>
-                <th className="w-1/5 max-w-5 truncate">User</th>
-                <th className="w-1/5 max-w-5 truncate">Payout</th>
-                <th className="w-1/5 max-w-5 truncate">Profit</th>
-              </tr>
-            </thead>
-            <tbody className="text-white">
-              {limitedItems.map((_: any, i: any) => (
-                <tr key={i}>
-                  <td className="truncate text-center">{arr[i].betid}</td>
-                  <td className="truncate text-center">{arr[i].address}</td>
-                  <td className="truncate text-center">{arr[i].username}</td>
-                  <td className="truncate text-center">{arr[i].payout}</td>
-                  <td className="truncate text-center">{arr[i].profit}</td>
+        <div className="mt-4 w-full ">
+          <div className="bg-[#323738]">
+            <table className="table-fixed px-3 py-3 w-full text-md  hidden md:block">
+              <thead className="text-gray-400">
+                <tr>
+                  <th className="w-[20%] truncate">Bet ID</th>
+                  <th className="w-[20%] truncate">Wallet Address</th>
+                  <th className="w-[20%] truncate">User</th>
+                  <th className="w-[20%] truncate">Payout</th>
+                  <th className="w-[20%] truncate">Profit</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="text-white">
+                {limitedItems.map((_: any, i: any) => (
+                  <tr key={i}>
+                    <td className="truncate text-center py-1">
+                      {arr[i].betid}
+                    </td>
+                    <td className="truncate text-center py-1">
+                      {arr[i].address}
+                    </td>
+                    <td className="truncate text-center py-1">
+                      {arr[i].username}
+                    </td>
+                    <td className="truncate text-center py-1">
+                      {arr[i].payout}x
+                    </td>
+                    <td className="truncate text-center py-1">
+                      ${arr[i].profit}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div></div>
+          </div>
           <div className="overflow-hidden md:hidden">
             {limitedItems.map((_: any, i: any) => (
               <div
@@ -157,30 +170,3 @@ export const History = () => {
     </div>
   );
 };
-{
-  /* <div
-  className="p-3 bg-[#3A4142] mt-2 rounded-md text-white text-xs"
-  key={i}
->
-  <div className="flex justify-between gap-2">
-    <div>Bet ID </div>
-    <div>{arr[i].betid}</div>
-  </div>
-  <div className="flex justify-between gap-2">
-    <div>Wallet </div>
-    <div>{arr[i].address}</div>
-  </div>
-  <div className="flex justify-between gap-2">
-    <div>User </div>
-    <div>{arr[i].username}</div>
-  </div>
-  <div className="flex justify-between gap-2">
-    <div>Payout </div>
-    <div>{arr[i].payout}</div>
-  </div>
-  <div className="flex justify-between gap-2">
-    <div>Profit </div>
-    <div>{arr[i].profit}</div>
-  </div>
-</div> */
-}

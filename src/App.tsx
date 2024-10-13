@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="px-6">
+      <div className="px-6 md:px-36">
         <History />
       </div>
       {isConnected ? (

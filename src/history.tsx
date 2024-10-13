@@ -76,7 +76,7 @@ export const History = () => {
   useEffect(() => {
     setLimitedItems(Object.values(arr).slice(0, itemCnt));
   }, [itemCnt]);
-  const active: string = " bg-[#3A4142] font-bold";
+
   const [activeTab, setActiveTab] = useState(0);
   return (
     <div className="">

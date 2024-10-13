@@ -41,11 +41,13 @@ export const History = () => {
         <div className="mt-4 w-full">
           <table className="table-fixed w-full text-md bg-[#323738] hidden md:block">
             <thead className="text-gray-400">
-              <th className="w-1/5 max-w-5 truncate">Bet ID</th>
-              <th className="w-1/5 max-w-5 truncate">Wallet Address</th>
-              <th className="w-1/5 max-w-5 truncate">User</th>
-              <th className="w-1/5 max-w-5 truncate">Payout</th>
-              <th className="w-1/5 max-w-5 truncate">Profit</th>
+              <tr>
+                <th className="w-1/5 max-w-5 truncate">Bet ID</th>
+                <th className="w-1/5 max-w-5 truncate">Wallet Address</th>
+                <th className="w-1/5 max-w-5 truncate">User</th>
+                <th className="w-1/5 max-w-5 truncate">Payout</th>
+                <th className="w-1/5 max-w-5 truncate">Profit</th>
+              </tr>
             </thead>
             <tbody className="text-white">
               {Object.keys(arr).map((i) => (
@@ -61,7 +63,10 @@ export const History = () => {
           </table>
           <div className="overflow-hidden md:hidden">
             {Object.keys(arr).map((i) => (
-              <div className="p-3 bg-[#3A4142] mt-2 rounded-md text-white text-xs">
+              <div
+                className="p-3 bg-[#3A4142] mt-2 rounded-md text-white text-xs"
+                key={i}
+              >
                 <div className="flex gap-2">
                   <div>Bet ID </div>
                   <div>{arr[i].betid}</div>

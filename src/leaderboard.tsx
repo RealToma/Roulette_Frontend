@@ -58,6 +58,7 @@ export const Leaderboard = () => {
                 "bg-[#FFE44D] text-black border-none": !activeTab,
               }
             )}
+            onClick={() => setActiveTab(0)}
           >
             Profit List
           </div>
@@ -68,6 +69,7 @@ export const Leaderboard = () => {
                 "bg-[#FFE44D] text-black border-none": activeTab,
               }
             )}
+            onClick={() => setActiveTab(1)}
           >
             Whitelisted Address List
           </div>

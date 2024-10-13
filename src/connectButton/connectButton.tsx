@@ -47,11 +47,11 @@ export const ConnectWallet = () => {
               if (chain.unsupported) {
                 return (
                   <button
-                    className="px-[26px]  h-[36px] border border-white rounded-[6px] text-[16px] uppercase bg-pink-700 text-white hover:cursor-pointer hover:bg-white hover:text-[#363A41] hover:border-black transition duration-200"
+                    className="px-[26px]  h-[36px] border  rounded-[6px] text-sm bg-pink-700 text-white hover:cursor-pointer hover:bg-white hover:text-[#363A41] hover:border-black transition duration-200"
                     onClick={openChainModal}
                     type="button"
                   >
-                    WRONG NETWORK
+                    Wrong Network
                   </button>
                 );
               }
@@ -59,7 +59,7 @@ export const ConnectWallet = () => {
               return (
                 <div className="flex space-x-2 ">
                   {chain.hasIcon && (
-                    <div className="flex items-center space-x-2 px-3 py-1 border border-white rounded-[6px] text-[16px] uppercase text-white hover:cursor-pointer hover:bg-white hover:text-[#363A41] hover:border-black transition duration-200">
+                    <div className="flex items-center space-x-2 bg-cs px-3 py-1 border  rounded-[6px] text-sm text-white hover:cursor-pointer hover:bg-white hover:text-[#363A41] hover:border-black transition duration-200">
                       {chain.iconUrl && (
                         <img
                           alt={chain.name ?? "Chain icon"}
@@ -72,7 +72,7 @@ export const ConnectWallet = () => {
                   )}
 
                   <button
-                    className="px-3 py-1 border border-white rounded-[6px] text-[16px] uppercase text-white hover:cursor-pointer hover:bg-white hover:text-[#363A41] hover:border-black transition duration-200"
+                    className="px-3 py-1 bg-cs border  rounded-[6px] text-sm uppercase text-white hover:cursor-pointer hover:bg-white hover:text-[#363A41] hover:border-black transition duration-200"
                     onClick={openAccountModal}
                   >
                     {account.displayName}

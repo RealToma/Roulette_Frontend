@@ -9,6 +9,8 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { mainnet } from "wagmi/chains";
 
+import { Provider as StoreProvider } from "react-redux";
+import { store } from "./redux";
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],
   [publicProvider()]
@@ -28,11 +30,13 @@ const wagmiConfig = createConfig({
 });
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
-        <App />
-      </RainbowKitProvider>
-    </WagmiConfig>
-  </StrictMode>
+  <StoreProvider store={store}>
+    <StrictMode>
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider chains={chains}>
+          <App />
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </StrictMode>
+  </StoreProvider>
 );

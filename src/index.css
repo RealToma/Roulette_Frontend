@@ -7,5 +7,6 @@
 }
 
 body {
-  background-color: #232626;
+  background-image: url("../public/bg.png");
+  background-size: cover;
 }
